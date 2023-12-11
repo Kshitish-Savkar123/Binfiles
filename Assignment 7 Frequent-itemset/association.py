@@ -66,7 +66,7 @@ def generate_association_rules(frequent_itemsets, transactions, min_confidence):
     return association_rules
 
 if __name__ == "__main__":
-    file_path = input("Enter the path to the CSV file: ")
+    file_path = 'Itemset.csv'
 
     # Read transactions from CSV file
     transactions = read_transactions_from_csv(file_path)
@@ -84,7 +84,8 @@ if __name__ == "__main__":
     # Display the result
     print("\nFrequent Itemsets:")
     for itemset in frequent_itemsets:
-        print(itemset)
+        support_itemset = sum(1 for transaction in transactions if set(itemset).issubset(transaction)) * (100 / len(transactions))
+        print(f"{itemset} | Support: {support_itemset}")
 
     print("\nAssociation Rules:")
     for rule in association_rules:

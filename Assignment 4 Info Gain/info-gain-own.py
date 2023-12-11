@@ -8,7 +8,6 @@ def calculate_entropy(data, target_class):
     for count in class_count:
         probability = count / len(data)
         entropy -= np.log2*(probability)
-
     return entropy
 
 def calculate_info_gain(data, attribute, target_class):
@@ -38,9 +37,3 @@ list(attributes)
 for attribute in attributes:
     info_gain = calculate_info_gain(data, attribute, 'PlayTennis')
     print(f"{attribute} : {info_gain}")
-
-
-
-
-
-

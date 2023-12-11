@@ -35,10 +35,10 @@ print(f"colSum: {colSum}")
 print(f"rowSum: {rowSum}")
 
 with open("output.csv", mode="w", newline='') as fw:
+    
     writer = csv.writer(fw)
     writer.writerow(["Column\\row", "", "State 1", "", "", "State 2", "", "", "Total", "", ""])
     writer.writerow(["", "Count", "t-weight", "d-weight", "Count", "t-weight", "d-weight", "Count", "t-weight", "d-weight"])
-
     for r in rowMap:
         row = r
         row_data = [row]

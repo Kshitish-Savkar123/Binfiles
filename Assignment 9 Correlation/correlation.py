@@ -5,7 +5,7 @@ def covariance(x, y, mean_x, mean_y):
     covar = 0.0
     for i in range(len(x)):
         covar += (x[i] - mean_x) * (y[i] - mean_y)
-    return covar / (len(x) - 1)
+    return covar
 
 def correlation_coefficient(x, y):
     mean_x, mean_y = mean(x), mean(y)
